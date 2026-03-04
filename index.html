@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="theme-color" content="#0a0a14">
 <title>FitFuel 🏋️</title>
-<link rel="icon" type="image/jpeg" href="icon.jpg">
-<link rel="apple-touch-icon" href="icon.jpg">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="manifest" href="manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
 :root{--bg:#0a0a14;--s1:#11111f;--s2:#17172a;--s3:#1e1e36;--ac:#c8f53a;--acd:rgba(200,245,58,.12);--bl:#3ab4f5;--bld:rgba(58,180,245,.12);--pk:#f53a8a;--pkd:rgba(245,58,138,.12);--or:#f5933a;--ord:rgba(245,147,58,.12);--gd:#ffd700;--gdd:rgba(255,215,0,.13);--tx:#eeeef8;--mt:#5a5a7a;--br:#1e1e38;--r:13px}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -99,7 +93,7 @@ input,select,button{font-family:inherit;font-size:inherit}
 .ptime-l{font-size:9px;color:var(--mt);font-weight:700;margin-top:1px}
 .ptime.nx{border-color:var(--gd);background:var(--gdd)}
 .ptime.nx .ptime-l{color:var(--gd)}
-.ptcnt{font-size:12px;color:var(--gd);font-weight:700;text-align:center;margin-top:7px;font-variant-numeric:tabular-nums}
+.ptcnt{font-size:12px;color:var(--gd);font-weight:700;text-align:center;margin-top:7px}
 .ptsrc{font-size:9px;color:var(--mt);text-align:center;margin-top:2px}
 .rbanner{background:linear-gradient(135deg,#14101e,#1c1232);border:1px solid rgba(255,215,0,.22);border-radius:14px;padding:11px 13px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .rtoggle{border:1.5px solid var(--gd);color:var(--gd);background:var(--gdd);border-radius:50px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer}
@@ -457,6 +451,7 @@ input:checked+.tsl:before{transform:translateX(18px);background:#0a0a14}
 // ============================================================
 const T = {
   ar: {
+    // Splash/Setup
     'sp-btn':'ابدأ 🚀',
     's1t':'معلوماتك الشخصية','s1s':'لحساب سعراتك الدقيقة',
     'l-nm':'الاسم','l-ag':'العمر','l-gn':'الجنس','l-wt':'الوزن (كغ)','l-ht':'الطول (سم)',
@@ -476,16 +471,20 @@ const T = {
     'ac-3':'معتدل','ac-3s':'وقوف وتنقل',
     'ac-4':'نشيط جداً',
     'nx4t':'ابدأ رحلتك',
+    // Nav
     'nl-home':'الرئيسية','nl-workout':'التمارين','nl-meals':'الوجبات','nl-profile':'الملف',
+    // Home
     'hm-gr':'مرحباً،',
     'cs1':'الهدف','cs2':'مستهلك','cs3':'متبقي',
     'lb-pro':'بروتين','lb-car':'كربو','lb-fat':'دهون',
     'lbl-qlog':'تسجيل سريع','log-nm-ph':'اسم الوجبة...',
     'lbl-tw':'تمرين اليوم','sa-btn':'عرض الكل',
+    // Prayer
     'pt-tag':'🇲🇦 أوقات الصلاة — الدار البيضاء',
     'pt-suhoor':'السحور','pt-fajr':'الفجر','pt-maghrib':'الإفطار','pt-isha':'العشاء',
     'rb-t':'رمضان مبارك 🌟','rb-s':'وضع رمضان مفعّل',
     'rtoggle-on':'إيقاف','rtoggle-off':'تفعيل رمضان',
+    // Workout
     'wk-tag':'برنامج الكيتل بيل','wk-ti':'جلسة اليوم',
     'pg-t':'📈 تقدمك','pg1l':'جلسات','pg2l':'أيام متتالية','pg3l':'الحدة / 5',
     'regen-t':'جلسة جديدة',
@@ -499,6 +498,7 @@ const T = {
     'rest-day-msg':'يوم الراحة','rest-day-sub':'جسمك يتعافى ويكبر في أوقات الراحة 💪',
     'lv-beginner':'مبتدئ 🌱','lv-intermediate':'متوسط ⚡','lv-advanced':'متقدم 🔥',
     'done-today':'✅ أنهيت اليوم',
+    // Meals
     'ml-ti':'خطة الوجبات','all-t':'كل الأيام',
     'msw-rm-t':'رمضان','msw-nm-t':'عادي',
     'dt-lb':'إجمالي اليوم','dt-lbt':'الهدف',
@@ -507,16 +507,20 @@ const T = {
     'ing-label':'المكونات (الوزن نيئاً)','prep-label':'التحضير:',
     'log-meal-btn':'+ سجل الوجبة','change-btn':'🔄 غيّر',
     'days':['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],
+    // Profile
     'edit-btn':'✏️ تعديل','lbl-lang':'🌐 اللغة',
     'edit-ti':'تعديل الملف الشخصي',
     'ed-lnm':'الاسم','ed-lwt':'الوزن (كغ)','ed-lht':'الطول (سم)','ed-lag':'العمر',
     'ed-sv':'حفظ',
     'al-t':'⏰ التنبيهات','hs-t':'📅 سجل التمارين',
     'rst-btn':'🗑 إعادة ضبط كل شيء',
+    // Alarms
     'al-iftar':'تنبيه الإفطار','al-suhoor':'تنبيه السحور','al-workout':'تنبيه التمرين',
     'al-breakfast':'تنبيه الفطور','al-lunch':'تنبيه الغداء','al-snack':'تنبيه السناك','al-dinner':'تنبيه العشاء',
     'al-granted':'✅ التنبيهات مفعّلة','al-denied':'❌ محظورة — افتح إعدادات المتصفح','al-default':'⚠️ اضغط أي تنبيه لتفعيل الإذن',
+    // Goals display
     'goal-lose':'حرق الدهون 🔥','goal-gain':'بناء العضل 💪','goal-maintain':'المحافظة ⚖️','goal-fit':'اللياقة 🏃',
+    // Toasts
     'toast-fill':'يرجى ملء جميع الحقول','toast-goal':'اختر هدفك','toast-level':'اختر مستواك','toast-act':'اختر مستوى النشاط',
     'toast-saved':'✅ تم الحفظ','toast-newses':'🔄 جلسة جديدة!','toast-done':'✅ أحسنت! جلسة مكتملة 🏆',
     'toast-meals':'🔄 تم تجديد الوجبات!','toast-meal1':'🔄 تم تغيير الوجبة!',
@@ -526,14 +530,16 @@ const T = {
     'toast-ram-on':'🌙 وضع رمضان مفعّل','toast-ram-off':'☀️ وضع عادي مفعّل',
     'toast-lang':'✅ تم تغيير اللغة',
     'confirm-reset':'هل أنت متأكد؟ ستُحذف جميع بياناتك!',
+    // Notifications body
     'notif-iftar':'أفطر على التمر والماء الآن','notif-suhoor':'استيقظ للسحور قبل الفجر',
     'notif-workout':'حان وقت الكيتل بيل!',
     'notif-breakfast':'لا تتخطى الفطور','notif-lunch':'حان وقت الغداء',
     'notif-snack':'وجبة خفيفة قبل التمرين','notif-dinner':'حان وقت العشاء',
     'notif-rest-done':'انتهت الراحة! الجولة التالية!',
+    // misc
     'no-sessions':'لا توجد جلسات بعد!',
     'exs-label':'تمارين',
-    'ptsrc-live':'🟢 مباشر من الإنترنت','ptsrc-cache':'🟡 من الذاكرة','ptsrc-fallback':'⚪ تقريبي','ptsrc-calc':'🟢 أوقات فلكية دقيقة','ptsrc-gps':'🟢 GPS دقيق 📍','ptsrc-city':'🟢 أوقات مدينتك 🏙️','ptsrc-default':'🟡 الدار البيضاء (افتراضي)',
+    'ptsrc-live':'🟢 مباشر من الإنترنت','ptsrc-cache':'🟡 من الذاكرة','ptsrc-fallback':'⚪ تقريبي','ptsrc-calc':'🟢 محسوب فلكياً','ptsrc-gps':'🟢 GPS دقيق 📍','ptsrc-city':'🟢 محسوب لمدينتك 🏙️','ptsrc-default':'🟡 الدار البيضاء (افتراضي)','ptsrc-gps-fb':'🟡 GPS + حساب','ptsrc-calc-fb':'🟡 حساب محلي',
     'countdown-to':'يتبقى لـ','h-label':'س ','m-label':' دقيقة',
     'day-done':'اليوم مكتمل',
   },
@@ -614,12 +620,15 @@ const T = {
     'notif-rest-done':'Rest done! Next round!',
     'no-sessions':'No sessions yet!',
     'exs-label':'exercises',
-    'ptsrc-live':'🟢 Live from internet','ptsrc-cache':'🟡 Cached','ptsrc-fallback':'⚪ Approximate','ptsrc-calc':'🟢 Accurate Astronomical Times','ptsrc-gps':'🟢 GPS accurate 📍','ptsrc-city':'🟢 Calculated for your city 🏙️','ptsrc-default':'🟡 Casablanca (default)',
+    'ptsrc-live':'🟢 Live from internet','ptsrc-cache':'🟡 Cached','ptsrc-fallback':'⚪ Approximate','ptsrc-calc':'🟢 Calculated','ptsrc-gps':'🟢 GPS accurate 📍','ptsrc-city':'🟢 Calculated for your city 🏙️','ptsrc-default':'🟡 Casablanca (default)','ptsrc-gps-fb':'🟡 GPS + local calc','ptsrc-calc-fb':'🟡 Local calc',
     'countdown-to':'Time to ','h-label':'h ','m-label':'m',
     'day-done':'Done today',
   }
 };
 
+// ============================================================
+// STATE
+// ============================================================
 let L='ar', P={}, SEL={}, DLOG={}, WH=[], MP={},
     CD=new Date().getDay(), CS=1,
     isRamadan=true, mealMode='ramadan', _WP=null,
@@ -627,10 +636,14 @@ let L='ar', P={}, SEL={}, DLOG={}, WH=[], MP={},
 
 function t(key){ return (T[L]&&T[L][key]) || (T['ar']&&T['ar'][key]) || key; }
 
+// ============================================================
+// APPLY ALL TRANSLATIONS to DOM
+// ============================================================
 function applyLang(){
   const ar = L==='ar';
   document.documentElement.lang = L;
   document.documentElement.dir = ar ? 'rtl' : 'ltr';
+  // Update every element that has a translation key
   const ids = [
     'sp-btn','s1t','s1s','l-nm','l-ag','l-gn','l-wt','l-ht','op-m','op-f','nx1',
     's2t','s2s','g-lose','g-gain','g-main','g-fit','nx2',
@@ -647,12 +660,15 @@ function applyLang(){
     const el=document.getElementById(id);
     if(el && t(id)!==id) el.textContent=t(id);
   });
+  // Placeholder
   const logNm=document.getElementById('log-nm');
   if(logNm) logNm.placeholder=t('log-nm-ph');
+  // Lang switcher active state
   const lsar=document.getElementById('lsw-ar');
   const lsen=document.getElementById('lsw-en');
   if(lsar) lsar.classList.toggle('on', L==='ar');
   if(lsen) lsen.classList.toggle('on', L==='en');
+  // Splash buttons
   document.querySelectorAll('.lbtn').forEach(b=>{
     b.classList.toggle('on', b.textContent.includes(ar?'العربية':'English') || (ar && b.textContent.includes('العربية')) || (!ar && b.textContent.includes('English')));
   });
@@ -666,11 +682,17 @@ function setL(l, btn){
 }
 
 function switchLang(l){
-  L=l; save(); applyLang();
+  L=l;
+  save();
+  applyLang();
+  // Re-render all visible content
   rRamadanUI(); rHome(); rWorkout(); rMeals(); rProfile();
   toast(t('toast-lang'));
 }
 
+// ============================================================
+// SAVE / LOAD
+// ============================================================
 function save(){
   try{
     localStorage.setItem('ff7',JSON.stringify({
@@ -702,15 +724,22 @@ function toast(msg,ms=3000){
   setTimeout(()=>el.classList.remove('on'),ms);
 }
 
+// ============================================================
+// CALORIE CALCULATION (fixed — no scientific notation)
+// ============================================================
 function calcCal(){
   const w=Number(P.weight)||70, h=Number(P.height)||170,
         a=Number(P.age)||25, act=Number(P.activity)||1.2;
-  let bmr = P.gender==='female' ? (10*w)+(6.25*h)-(5*a)-161 : (10*w)+(6.25*h)-(5*a)+5;
+  // Mifflin-St Jeor
+  let bmr = P.gender==='female'
+    ? (10*w)+(6.25*h)-(5*a)-161
+    : (10*w)+(6.25*h)-(5*a)+5;
   let tdee = bmr * act;
   let target = tdee;
   if(P.goal==='lose') target = tdee - 400;
   else if(P.goal==='gain') target = tdee + 250;
   else if(P.goal==='fit') target = tdee - 150;
+  // Round all to integers
   P.targetCal = Math.round(target);
   P.tdee      = Math.round(tdee);
   P.bmr       = Math.round(bmr);
@@ -720,11 +749,9 @@ function calcCal(){
 }
 
 // ============================================================
-// PERFECT MATH CLOCK ENGINE (NO ADHAN.JS NEEDED)
+// PRAYER TIMES — Uses adhan.js (same engine as Salaat First / Muslim Pro)
+// 100% offline calculation. Loaded once from CDN, cached by browser.
 // ============================================================
-const DEG = Math.PI / 180;
-function fixH(h) { return h - 24 * Math.floor(h / 24); }
-
 function addM(tstr, m){
   if(!tstr) return '--:--';
   const[h,mn]=tstr.split(':').map(Number);
@@ -732,6 +759,7 @@ function addM(tstr, m){
   return String(Math.floor(tm/60)).padStart(2,'0')+':'+String(tm%60).padStart(2,'0');
 }
 function t2m(tstr){ if(!tstr||tstr==='--:--')return-1; const[h,m]=tstr.split(':').map(Number); return h*60+m; }
+function cleanT(raw){ return (raw||'--:--').replace(/\s.*/,'').substring(0,5); }
 
 function to12h(t24){
   if(!t24||t24==='--:--') return '--:--';
@@ -741,32 +769,114 @@ function to12h(t24){
   return `${h}:${String(m).padStart(2,'0')} ${ampm}`;
 }
 
-function calcMathPT(lat, lng) {
-    const date = new Date();
-    const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
-    const gamma = 2 * Math.PI / 365 * (dayOfYear - 1 + (date.getHours() - 12) / 24);
-    const eqtime = 229.18 * (0.000075 + 0.001868 * Math.cos(gamma) - 0.032077 * Math.sin(gamma) - 0.014615 * Math.cos(2 * gamma) - 0.040849 * Math.sin(2 * gamma));
-    const decl = 0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma) - 0.006758 * Math.cos(2 * gamma) + 0.000907 * Math.sin(2 * gamma);
-    
-    const tzOffset = -date.getTimezoneOffset() / 60;
-    const noon = 12 - (lng / 15) + tzOffset - (eqtime / 60);
-
-    const getHA = (angle) => {
-        const v = (-Math.sin(angle * DEG) - Math.sin(lat * DEG) * Math.sin(decl)) / (Math.cos(lat * DEG) * Math.cos(decl));
-        return v < -1 || v > 1 ? null : Math.acos(v) / (15 * DEG);
-    };
-
-    const toTime = (hrs) => {
-        if (!hrs) return "--:--";
-        const h = Math.floor(fixH(hrs));
-        const m = Math.round((fixH(hrs) - h) * 60);
-        return String(h).padStart(2,'0') + ":" + String(m).padStart(2,'0');
-    };
-
-    return { fajr: toTime(noon - getHA(18)), maghrib: toTime(noon + getHA(0.833)), isha: toTime(noon + getHA(17)) };
+function fmt(date){
+  // format a Date object to HH:MM local time string
+  const h=date.getHours(), m=date.getMinutes();
+  return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0');
 }
 
+let _adhanReady=false;
+function loadAdhan(){
+  return new Promise(resolve=>{
+    if(window.adhan){resolve(true);return;}
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/adhan@4.4.3/lib/adhan.min.js';
+    s.onload=()=>{_adhanReady=true;resolve(true);};
+    s.onerror=()=>resolve(false);
+    document.head.appendChild(s);
+  });
+}
+
+function calcWithAdhan(lat,lng){
+  try{
+    const coords=new adhan.Coordinates(lat,lng);
+    const date=new Date();
+    // MuslimWorldLeague method — used by most apps for Morocco
+    const params=adhan.CalculationMethod.MuslimWorldLeague();
+    params.madhab=adhan.Madhab.Shafi; // standard asr timing
+    const pt=new adhan.PrayerTimes(coords,date,params);
+    return{
+      fajr:fmt(pt.fajr),
+      sunrise:fmt(pt.sunrise),
+      dhuhr:fmt(pt.dhuhr),
+      asr:fmt(pt.asr),
+      maghrib:fmt(pt.maghrib),
+      isha:fmt(pt.isha),
+    };
+  }catch(e){return null;}
+}
+
+// Fallback: pure-JS astronomical calculation (no library needed)
+function calcFallback(lat, lng) {
+  const DEG = Math.PI / 180;
+  const date = new Date();
+  const tzOff = -date.getTimezoneOffset() / 60;
+
+  // Julian Day Number
+  let y = date.getFullYear(), mo = date.getMonth() + 1, d = date.getDate();
+  if (mo <= 2) { y--; mo += 12; }
+  const A = Math.floor(y / 100), B = 2 - A + Math.floor(A / 4);
+  const jd = Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (mo + 1)) + d + B - 1524.5;
+
+  const D = jd - 2451545.0;
+
+  // Sun's mean anomaly & mean longitude (degrees)
+  const g = (357.529 + 0.98560028 * D) % 360;
+  const q = (280.459 + 0.98564736 * D) % 360;
+
+  // Ecliptic longitude (degrees)
+  const L2 = (q + 1.915 * Math.sin(g * DEG) + 0.02 * Math.sin(2 * g * DEG)) % 360;
+
+  // Obliquity of ecliptic
+  const e = (23.439 - 0.00000036 * D) * DEG;
+
+  // Declination
+  const dec = Math.asin(Math.sin(e) * Math.sin(L2 * DEG));
+
+  // Right Ascension (hours)
+  let RA = Math.atan2(Math.cos(e) * Math.sin(L2 * DEG), Math.cos(L2 * DEG)) / DEG / 15;
+  if (RA < 0) RA += 24;
+
+  // Equation of time (hours)
+  const eqt = q / 15 - RA;
+
+  // Solar noon in local time
+  const transit = 12 - lng / 15 + tzOff - eqt;
+
+  // Hour angle for a given altitude angle (degrees)
+  function ha(angle) {
+    const cosH = (-Math.sin(angle * DEG) - Math.sin(dec) * Math.sin(lat * DEG))
+                 / (Math.cos(dec) * Math.cos(lat * DEG));
+    if (cosH < -1 || cosH > 1) return null;
+    return Math.acos(cosH) / DEG / 15; // hours
+  }
+
+  function toHM(hours) {
+    if (hours === null) return '--:--';
+    hours = ((hours % 24) + 24) % 24;
+    const hh = Math.floor(hours);
+    const mm = Math.round((hours - hh) * 60);
+    if (mm === 60) return String(hh + 1).padStart(2, '0') + ':00';
+    return String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
+  }
+
+  // Angles: Fajr 18° (Muslim World League), Maghrib at 0.833° (refraction+disc), Isha 17°
+  const fHA = ha(18);
+  const mHA = ha(0.833);
+  const iHA = ha(17);
+
+  return {
+    fajr:    toHM(fHA !== null ? transit - fHA : null),
+    maghrib: toHM(mHA !== null ? transit + mHA : null),
+    isha:    toHM(iHA !== null ? transit + iHA : null),
+  };
+}
+
+// ============================================================
+// CITIES DATABASE — accurate coords for Morocco + Arab world
+// ============================================================
 const CITIES=[
+  // Morocco
   {n:'الدار البيضاء',e:'Casablanca',lat:33.5731,lng:-7.5898,tz:1},
   {n:'الرباط',e:'Rabat',lat:33.9716,lng:-6.8498,tz:1},
   {n:'فاس',e:'Fes',lat:34.0331,lng:-5.0003,tz:1},
@@ -782,20 +892,27 @@ const CITIES=[
   {n:'بني ملال',e:'Beni Mellal',lat:32.3373,lng:-6.3498,tz:1},
   {n:'نادور',e:'Nador',lat:35.1740,lng:-2.9287,tz:1},
   {n:'العيون',e:'Laayoune',lat:27.1536,lng:-13.2033,tz:1},
+  // Algeria
   {n:'الجزائر',e:'Algiers',lat:36.7372,lng:3.0865,tz:1},
   {n:'وهران',e:'Oran',lat:35.6969,lng:-0.6331,tz:1},
+  // Tunisia
   {n:'تونس',e:'Tunis',lat:36.8065,lng:10.1815,tz:1},
+  // Egypt
   {n:'القاهرة',e:'Cairo',lat:30.0444,lng:31.2357,tz:2},
+  // Saudi Arabia
   {n:'مكة المكرمة',e:'Mecca',lat:21.3891,lng:39.8579,tz:3},
   {n:'المدينة المنورة',e:'Medina',lat:24.5247,lng:39.5692,tz:3},
   {n:'الرياض',e:'Riyadh',lat:24.7136,lng:46.6753,tz:3},
+  // UAE
   {n:'دبي',e:'Dubai',lat:25.2048,lng:55.2708,tz:4},
+  // Jordan
   {n:'عمّان',e:'Amman',lat:31.9454,lng:35.9284,tz:3},
+  // France (for Moroccan diaspora)
   {n:'باريس',e:'Paris',lat:48.8566,lng:2.3522,tz:1},
-  {n:'مرسيليا',e:'Marseille',lat:43.2965,lng:5.3698,tz:1}
+  {n:'مرسيليا',e:'Marseille',lat:43.2965,lng:5.3698,tz:1},
 ];
 
-let _userCity=null; 
+let _userCity=null; // {lat,lng,tz,name}
 
 function getCityCoords(){
   const saved=localStorage.getItem('ff7_city');
@@ -809,12 +926,16 @@ function saveCityCoords(city){
 
 function onCityChange(idx){
   if(idx===''||idx==='gps') {
-    localStorage.removeItem('ff7_city'); _userCity=null; _cachedPT=null;
-    fetchPT().then(()=>{rPrayerCard();rAlarms();}); return;
+    localStorage.removeItem('ff7_city');
+    _userCity=null;
+    _cachedPT=null;
+    fetchPT().then(()=>{rPrayerCard();rAlarms();});
+    return;
   }
   const city=CITIES[+idx];
   if(!city) return;
-  saveCityCoords(city); _cachedPT=null;
+  saveCityCoords(city);
+  _cachedPT=null;
   fetchPT().then(()=>{rPrayerCard();rAlarms();});
   toast((L==='ar'?'📍 تم اختيار ':'📍 City set: ')+(L==='ar'?city.n:city.e));
 }
@@ -826,10 +947,13 @@ function renderCityCard(){
   const sel=document.getElementById('city-sel');
   sel.innerHTML=`<option value="gps">${ar?'📡 تلقائي (GPS)':'📡 Auto (GPS)'}</option>`
     +CITIES.map((c,i)=>`<option value="${i}">${ar?c.n:c.e}</option>`).join('');
+  // restore selected
   if(saved){
     const idx=CITIES.findIndex(c=>c.n===saved.n);
     if(idx>=0) sel.value=String(idx);
-  } else { sel.value='gps'; }
+  } else {
+    sel.value='gps';
+  }
   const note=document.getElementById('city-note');
   if(!saved){
     note.textContent=ar?'⚠️ GPS يحتاج HTTPS — اختر مدينتك إذا كنت على Chrome مباشرة':'⚠️ GPS needs HTTPS — pick city if using Chrome directly';
@@ -841,18 +965,25 @@ function renderCityCard(){
 }
 
 async function getCoords(){
+  // If user manually picked a city, use it
   const city=getCityCoords();
   if(city) return {lat:city.lat, lng:city.lng, fromCity:true};
+  // Otherwise try browser GPS
   return new Promise((resolve)=>{
     if(!navigator.geolocation){resolve(null);return;}
     navigator.geolocation.getCurrentPosition(
       pos=>resolve({lat:pos.coords.latitude,lng:pos.coords.longitude}),
-      ()=>resolve(null), {timeout:5000,maximumAge:3600000}
+      ()=>resolve(null),
+      {timeout:5000,maximumAge:3600000}
     );
   });
 }
 
 async function fetchPT(){
+  const today=new Date();
+  const todayStr=today.toDateString();
+  if(_cachedPT&&_cachedPT.date===todayStr) return _cachedPT;
+
   const coords=await Promise.race([
     getCoords(),
     new Promise(r=>setTimeout(()=>r(null),4000))
@@ -862,24 +993,31 @@ async function fetchPT(){
   const lng=coords?coords.lng:-7.5898;
   const fromCity=coords&&coords.fromCity;
 
-  const pt = calcMathPT(lat, lng);
-  
-  let src = fromCity ? 'city' : (coords ? 'gps' : 'calc');
+  // Try adhan.js (most accurate, same engine as Salaat First)
+  let times=null;
+  const adhanLoaded=await loadAdhan();
+  if(adhanLoaded) times=calcWithAdhan(lat,lng);
+  if(!times) times=calcFallback(lat,lng);
 
-  _cachedPT={
-      fajr: pt.fajr,
-      maghrib: pt.maghrib,
-      isha: pt.isha,
-      suhoor: addM(pt.fajr, -35),
-      workout: addM(pt.maghrib, 90),
-      src: src
-  };
+  const fajr=times.fajr||'--:--';
+  const magh=times.maghrib||'--:--';
+  const isha=times.isha||'--:--';
+
+  let src;
+  if(fromCity) src='city';
+  else if(coords) src='gps';
+  else src='default';
+
+  _cachedPT={fajr,maghrib:magh,isha,suhoor:addM(fajr,-35),workout:addM(magh,90),date:todayStr,src};
   try{localStorage.setItem('ff7_pt',JSON.stringify(_cachedPT));}catch(e){}
   return _cachedPT;
 }
 
 function getPT(){
-  return _cachedPT || {fajr:'05:30', maghrib:'18:30', isha:'19:50', suhoor:'04:55', workout:'20:00', src:'calc'};
+  if(_cachedPT&&_cachedPT.fajr) return _cachedPT;
+  const t=calcFallback(33.5731,-7.5898);
+  return{fajr:t.fajr||'--:--',maghrib:t.maghrib||'--:--',isha:t.isha||'--:--',
+         suhoor:addM(t.fajr,-35),workout:addM(t.maghrib,90),src:'calc'};
 }
 
 function rPrayerCard(){
@@ -894,55 +1032,52 @@ function rPrayerCard(){
   const ds=L==='ar'?days_ar:days_en, ms=L==='ar'?months_ar:months_en;
   document.getElementById('pt-date').textContent=`${ds[now.getDay()]} ${now.getDate()} ${ms[now.getMonth()]} ${now.getFullYear()}`;
   document.getElementById('pt-tag').textContent=t('pt-tag');
-  
   const items=[
     {k:'maghrib',lbl:t('pt-maghrib'),tm:pt.maghrib,ic:'🌅'},
     {k:'isha',lbl:t('pt-isha'),tm:pt.isha,ic:'🌙'},
     {k:'suhoor',lbl:t('pt-suhoor'),tm:pt.suhoor,ic:'⭐'}
   ];
-  
   const nowMin=now.getHours()*60+now.getMinutes();
-  const nowSec=now.getSeconds();
-  
   let nextIdx=-1;
-  let minDiff = Infinity;
-  
-  items.forEach((x,i)=>{ 
-      let diff = t2m(x.tm) - nowMin;
-      if (diff < 0) diff += 1440; // Next day
-      if (diff < minDiff) { minDiff = diff; nextIdx = i; }
-  });
-  
+  items.forEach((x,i)=>{ if(nextIdx===-1&&t2m(x.tm)>nowMin) nextIdx=i; });
   document.getElementById('ptrow').innerHTML=items.map((x,i)=>`
     <div class="ptime${i===nextIdx?' nx':''}">
       <div style="font-size:12px">${x.ic}</div>
       <div class="ptime-v">${to12h(x.tm)}</div>
       <div class="ptime-l">${x.lbl}</div>
     </div>`).join('');
-    
   if(nextIdx>=0){
-    const nx = items[nextIdx];
-    let diffMin = t2m(nx.tm) - nowMin;
-    if (diffMin < 0) diffMin += 1440;
-    
-    let remSec = 60 - nowSec;
-    if (remSec === 60) remSec = 0; else diffMin -= 1;
-    if (diffMin < 0) diffMin = 0;
-
-    const dh = Math.floor(diffMin/60), dm = diffMin%60;
-    document.getElementById('pt-badge').textContent=dh>0?`${dh}h ${dm}m`:`${dm}m`;
-    
-    const secLabel = L==='ar' ? 'ث' : 's';
-    document.getElementById('ptcnt').textContent=t('countdown-to')+ ' ' + nx.lbl+': '+(dh>0?dh+t('h-label'):'')+dm+t('m-label') + ` ${remSec}${secLabel}`;
+    const nx=items[nextIdx];
+    const [th,tm2]=nx.tm.split(':').map(Number);
+    const tgtSec = th*3600 + tm2*60;
+    const nowSec = now.getHours()*3600 + now.getMinutes()*60 + now.getSeconds();
+    let diffSec = tgtSec - nowSec;
+    if(diffSec < 0) diffSec += 86400; // handle midnight rollover
+    const dh=Math.floor(diffSec/3600);
+    const dm=Math.floor((diffSec%3600)/60);
+    const ds=diffSec%60;
+    const badge = dh>0 ? `${dh}h ${dm}m` : dm>0 ? `${dm}m ${ds}s` : `${ds}s`;
+    document.getElementById('pt-badge').textContent=badge;
+    const full = dh>0
+      ? `${dh}${t('h-label')} ${dm}${t('m-label')} ${ds}s`
+      : `${dm}${t('m-label')} ${ds}s`;
+    document.getElementById('ptcnt').textContent=t('countdown-to')+nx.lbl+': '+full;
+  } else {
+    document.getElementById('pt-badge').textContent=t('day-done');
+    document.getElementById('ptcnt').textContent='';
   }
-  const srcMap={live:t('ptsrc-live'),cache:t('ptsrc-cache'),fallback:t('ptsrc-fallback'),calc:t('ptsrc-calc'),gps:t('ptsrc-gps'),city:t('ptsrc-city'),default:t('ptsrc-default')};
-  document.getElementById('ptsrc').textContent=srcMap[pt.src||'calc']||'';
+  const srcMap={live:t('ptsrc-live'),cache:t('ptsrc-cache'),fallback:t('ptsrc-fallback'),calc:t('ptsrc-calc'),gps:t('ptsrc-gps'),city:t('ptsrc-city'),default:t('ptsrc-default'),'gps-fb':t('ptsrc-gps-fb'),'calc-fb':t('ptsrc-calc-fb')};
+  document.getElementById('ptsrc').textContent=srcMap[pt.src||'default']||'';
 }
 
 function startPTLoop(){
+  if(_CTD)clearInterval(_CTD);
   if(window._CTD2)clearInterval(window._CTD2);
+  // Fetch fresh prayer times immediately
   fetchPT().then(()=>rPrayerCard());
-  // TICK EVERY 1 SECOND
+  // Re-fetch once per hour (cache handles same-day deduplication)
+  _CTD=setInterval(()=>{ _cachedPT=null; fetchPT().then(()=>rPrayerCard()); },3600000);
+  // Tick every second so the countdown is live
   window._CTD2=setInterval(()=>{ rPrayerCard(); },1000);
 }
 
@@ -1107,7 +1242,7 @@ function logMeal(cal,nm){
 }
 
 // ============================================================
-// MEALS DB
+// MEALS DB — Simple, fast (<10min), no onion/garlic
 // ============================================================
 const ML={
   ramadan:{
@@ -1440,22 +1575,38 @@ function rWorkout(){
   document.getElementById('wkcnt').innerHTML=h;
 }
 function getExSVG(id){
+  // Inline SVG stick-figure animations — no internet needed
   const anims={
+    // Kettlebell Swing
     'ub1':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes sw{0%{transform:rotate(-30deg) translateY(4px)}50%{transform:rotate(10deg) translateY(-4px)}100%{transform:rotate(-30deg) translateY(4px)}}.sa{animation:sw 1s ease-in-out infinite;transform-origin:30px 28px}</style><g class="sa"><circle cx="30" cy="10" r="5" fill="none" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="15" x2="30" y2="30" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="20" x2="20" y2="28" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="20" x2="40" y2="28" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="30" x2="22" y2="44" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="30" x2="38" y2="44" stroke="var(--bl)" stroke-width="2"/><ellipse cx="30" cy="50" rx="6" ry="4" fill="var(--ac)" opacity="0.8"/></g></svg>`,
+    // Squat / Goblet
     'w3':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes sq{0%,100%{transform:scaleY(1) translateY(0)}50%{transform:scaleY(0.72) translateY(8px)}}.sq{animation:sq 1.2s ease-in-out infinite;transform-origin:30px 30px}</style><g class="sq"><circle cx="30" cy="9" r="5" fill="none" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="14" x2="30" y2="30" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="20" x2="18" y2="26" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="20" x2="42" y2="26" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="30" x2="20" y2="48" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="30" x2="40" y2="48" stroke="var(--ac)" stroke-width="2"/></g></svg>`,
+    // High Knees
     'w1':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes kl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes kr{0%,100%{transform:translateY(-8px)}50%{transform:translateY(0)}}.kl{animation:kl 0.6s ease-in-out infinite}.kr{animation:kr 0.6s ease-in-out infinite}</style><circle cx="30" cy="9" r="5" fill="none" stroke="var(--pk)" stroke-width="2"/><line x1="30" y1="14" x2="30" y2="30" stroke="var(--pk)" stroke-width="2"/><line x1="30" y1="20" x2="18" y2="26" stroke="var(--pk)" stroke-width="2"/><line x1="30" y1="20" x2="42" y2="26" stroke="var(--pk)" stroke-width="2"/><g class="kl"><line x1="30" y1="30" x2="20" y2="42" stroke="var(--pk)" stroke-width="2"/><line x1="20" y1="42" x2="18" y2="52" stroke="var(--pk)" stroke-width="2"/></g><g class="kr"><line x1="30" y1="30" x2="40" y2="42" stroke="var(--pk)" stroke-width="2"/><line x1="40" y1="42" x2="42" y2="52" stroke="var(--pk)" stroke-width="2"/></g></svg>`,
+    // Press / Military
     'ui2':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes pr{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.pr{animation:pr 1.2s ease-in-out infinite}</style><circle cx="30" cy="14" r="5" fill="none" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="19" x2="30" y2="35" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="35" x2="20" y2="50" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="35" x2="40" y2="50" stroke="var(--ac)" stroke-width="2"/><g class="pr"><line x1="30" y1="25" x2="14" y2="30" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="25" x2="46" y2="30" stroke="var(--ac)" stroke-width="2"/><rect x="8" y="27" width="8" height="6" rx="2" fill="var(--gd)" opacity="0.9"/><rect x="44" y="27" width="8" height="6" rx="2" fill="var(--gd)" opacity="0.9"/></g></svg>`,
+    // Row / Back
     'ub4':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes rw{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}.rw{animation:rw 1s ease-in-out infinite}</style><g transform="rotate(-30,30,30)"><circle cx="30" cy="10" r="5" fill="none" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="15" x2="30" y2="32" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="32" x2="18" y2="46" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="32" x2="42" y2="46" stroke="var(--bl)" stroke-width="2"/></g><g class="rw"><line x1="30" y1="22" x2="46" y2="26" stroke="var(--bl)" stroke-width="2"/><ellipse cx="50" cy="26" rx="5" ry="4" fill="var(--gd)" opacity="0.9"/></g></svg>`,
+    // Turkish Get-up / full body
     'fa1':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes tg{0%{transform:rotate(0deg)}25%{transform:rotate(-20deg)}75%{transform:rotate(20deg)}100%{transform:rotate(0deg)}}.tg{animation:tg 2s ease-in-out infinite;transform-origin:30px 35px}</style><g class="tg"><circle cx="30" cy="10" r="5" fill="none" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="15" x2="30" y2="35" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="22" x2="18" y2="30" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="22" x2="48" y2="15" stroke="var(--ac)" stroke-width="2"/><circle cx="48" cy="13" r="4" fill="none" stroke="var(--gd)" stroke-width="2"/><line x1="30" y1="35" x2="20" y2="50" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="35" x2="40" y2="50" stroke="var(--ac)" stroke-width="2"/></g></svg>`,
+    // Deadlift / RDL
     'lb2':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes dl{0%,100%{transform:rotate(-25deg) translateY(2px)}50%{transform:rotate(0deg) translateY(-4px)}}.dl{animation:dl 1.4s ease-in-out infinite;transform-origin:30px 32px}</style><g class="dl"><circle cx="30" cy="10" r="5" fill="none" stroke="var(--or)" stroke-width="2"/><line x1="30" y1="15" x2="30" y2="32" stroke="var(--or)" stroke-width="2"/><line x1="30" y1="22" x2="18" y2="28" stroke="var(--or)" stroke-width="2"/><line x1="30" y1="22" x2="42" y2="28" stroke="var(--or)" stroke-width="2"/><line x1="30" y1="32" x2="20" y2="48" stroke="var(--or)" stroke-width="2"/><line x1="30" y1="32" x2="40" y2="48" stroke="var(--or)" stroke-width="2"/><line x1="14" y1="30" x2="46" y2="30" stroke="var(--gd)" stroke-width="3"/><rect x="8" y="26" width="8" height="8" rx="2" fill="var(--gd)" opacity="0.9"/><rect x="44" y="26" width="8" height="8" rx="2" fill="var(--gd)" opacity="0.9"/></g></svg>`,
+    // Lunge
     'lb3':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes ln{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}.ln{animation:ln 1.2s ease-in-out infinite}</style><g class="ln"><circle cx="28" cy="8" r="5" fill="none" stroke="var(--pk)" stroke-width="2"/><line x1="28" y1="13" x2="28" y2="28" stroke="var(--pk)" stroke-width="2"/><line x1="28" y1="20" x2="16" y2="26" stroke="var(--pk)" stroke-width="2"/><line x1="28" y1="20" x2="40" y2="26" stroke="var(--pk)" stroke-width="2"/><line x1="28" y1="28" x2="16" y2="44" stroke="var(--pk)" stroke-width="2"/><line x1="16" y1="44" x2="14" y2="54" stroke="var(--pk)" stroke-width="2"/><line x1="28" y1="28" x2="42" y2="36" stroke="var(--pk)" stroke-width="2"/><line x1="42" y1="36" x2="46" y2="48" stroke="var(--pk)" stroke-width="2"/></g></svg>`,
+    // Halo
     'ub2':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes hl{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.hl{animation:hl 2s linear infinite;transform-origin:30px 16px}</style><circle cx="30" cy="32" r="5" fill="none" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="37" x2="30" y2="48" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="40" x2="20" y2="44" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="40" x2="40" y2="44" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="48" x2="22" y2="56" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="48" x2="38" y2="56" stroke="var(--ac)" stroke-width="2"/><g class="hl"><ellipse cx="30" cy="16" rx="10" ry="5" fill="none" stroke="var(--gd)" stroke-width="3"/></g></svg>`,
+    // Shoulder circles
     'w2':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes sc1{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes sc2{0%{transform:rotate(0deg)}100%{transform:rotate(-360deg)}}.sc1{animation:sc1 1.5s linear infinite;transform-origin:20px 24px}.sc2{animation:sc2 1.5s linear infinite;transform-origin:40px 24px}</style><circle cx="30" cy="9" r="5" fill="none" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="14" x2="30" y2="32" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="32" x2="20" y2="48" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="32" x2="40" y2="48" stroke="var(--bl)" stroke-width="2"/><g class="sc1"><line x1="30" y1="20" x2="8" y2="24" stroke="var(--bl)" stroke-width="2"/><circle cx="8" cy="24" r="3" fill="var(--ac)"/></g><g class="sc2"><line x1="30" y1="20" x2="52" y2="24" stroke="var(--bl)" stroke-width="2"/><circle cx="52" cy="24" r="3" fill="var(--ac)"/></g></svg>`,
+    // Farmer walk
     'cb2':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes fw{0%,100%{transform:translateX(-6px)}50%{transform:translateX(6px)}}.fw{animation:fw 0.8s ease-in-out infinite}</style><g class="fw"><circle cx="30" cy="8" r="5" fill="none" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="13" x2="30" y2="30" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="20" x2="14" y2="26" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="20" x2="46" y2="26" stroke="var(--ac)" stroke-width="2"/><rect x="8" y="24" width="8" height="8" rx="2" fill="var(--gd)" opacity="0.9"/><rect x="44" y="24" width="8" height="8" rx="2" fill="var(--gd)" opacity="0.9"/><line x1="30" y1="30" x2="20" y2="46" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="30" x2="40" y2="46" stroke="var(--ac)" stroke-width="2"/></g></svg>`,
+    // Quad stretch / cooldown
     'c1':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes qs{0%,100%{transform:rotate(0deg)}50%{transform:rotate(15deg)}}.qs{animation:qs 2s ease-in-out infinite;transform-origin:30px 20px}</style><g class="qs"><circle cx="30" cy="8" r="5" fill="none" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="13" x2="30" y2="30" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="20" x2="18" y2="26" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="30" x2="20" y2="46" stroke="var(--bl)" stroke-width="2"/><line x1="20" y1="46" x2="28" y2="56" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="30" x2="42" y2="42" stroke="var(--bl)" stroke-width="2"/><line x1="42" y1="42" x2="38" y2="54" stroke="var(--gd)" stroke-width="2"/></g></svg>`,
+    // Back stretch child pose
     'c2':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes bs{0%,100%{transform:scaleX(1)}50%{transform:scaleX(1.1)}}.bs{animation:bs 3s ease-in-out infinite;transform-origin:30px 40px}</style><g class="bs"><ellipse cx="30" cy="38" rx="22" ry="8" fill="none" stroke="var(--bl)" stroke-width="2"/><circle cx="10" cy="36" r="5" fill="none" stroke="var(--bl)" stroke-width="2"/><line x1="15" y1="36" x2="30" y2="34" stroke="var(--bl)" stroke-width="2"/><line x1="30" y1="34" x2="50" y2="40" stroke="var(--bl)" stroke-width="2"/></g></svg>`,
+    // Clean
     'ui1':()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes cl{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(-10deg)}}.cl{animation:cl 1s ease-in-out infinite;transform-origin:30px 30px}</style><g class="cl"><circle cx="30" cy="8" r="5" fill="none" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="13" x2="30" y2="30" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="20" x2="16" y2="28" stroke="var(--ac)" stroke-width="2"/><line x1="16" y1="28" x2="12" y2="20" stroke="var(--ac)" stroke-width="2"/><circle cx="10" cy="18" r="4" fill="none" stroke="var(--gd)" stroke-width="2"/><line x1="30" y1="20" x2="44" y2="28" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="30" x2="20" y2="46" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="30" x2="40" y2="46" stroke="var(--ac)" stroke-width="2"/></g></svg>`,
   };
+  // default animation for unknown exercises
   const def=()=>`<svg viewBox="0 0 60 60" style="width:100%;height:100%"><style>@keyframes df{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.df{animation:df 1s ease-in-out infinite}</style><g class="df"><circle cx="30" cy="9" r="5" fill="none" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="14" x2="30" y2="32" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="22" x2="18" y2="28" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="22" x2="42" y2="28" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="32" x2="20" y2="48" stroke="var(--ac)" stroke-width="2"/><line x1="30" y1="32" x2="40" y2="48" stroke="var(--ac)" stroke-width="2"/></g></svg>`;
   return (anims[id]||def)();
 }
@@ -1468,6 +1619,7 @@ function exCard(e,si,sk){
   let sn=0,rn='';
   if(si){const p=si.split('×');sn=parseInt(p[0]);rn=p[1]||'';}
   const rv=e.r?e.r[sk]:null;
+  // Use YouTube SEARCH — always works, never breaks
   const ytQuery=encodeURIComponent((e.en||nm)+' kettlebell tutorial how to');
   const ytUrl=`https://www.youtube.com/results?search_query=${ytQuery}`;
   const ytLabel=L==='ar'?'📺 شرح على يوتيوب':'📺 Watch on YouTube';
@@ -1645,6 +1797,7 @@ function rProfile(){
   document.getElementById('al-t').textContent=t('al-t');
   document.getElementById('hs-t').textContent=t('hs-t');
   document.getElementById('rst-btn').textContent=t('rst-btn');
+  // Lang buttons
   document.getElementById('lsw-ar').classList.toggle('on',L==='ar');
   document.getElementById('lsw-en').classList.toggle('on',L==='en');
   const bmi=(P.weight/((P.height/100)**2)).toFixed(1);
@@ -1692,10 +1845,12 @@ function rAlarms(){
       </label>
     </div>`).join('');
 
+  // Salaat First app link
   const sfLabel=L==='ar'?'🕌 فتح تطبيق Salaat First':'🕌 Open Salaat First App';
   const sfNote=L==='ar'?'للتأكد من دقة أوقات الصلاة':'For accurate prayer times';
   const sfAndroid='https://play.google.com/store/apps/details?id=com.batoulapps.adhan';
   const sfIos='https://apps.apple.com/app/salaat-first/id960395272';
+  // detect iOS vs Android
   const isIos=/iphone|ipad|ipod/i.test(navigator.userAgent);
   const sfUrl=isIos?sfIos:sfAndroid;
   document.getElementById('alarms-list').innerHTML+=`
@@ -1720,7 +1875,10 @@ function toggleAlarm(k,v){
 async function reqNotif(){
   if(!('Notification' in window)) return;
   if(Notification.permission==='granted'){schedAlarms();return;}
-  if(Notification.permission==='default'){ showNotifPopup(); }
+  if(Notification.permission==='default'){
+    // Show our custom popup instead of browser prompt directly
+    showNotifPopup();
+  }
 }
 function showNotifPopup(){
   const ar=L==='ar';
@@ -1799,214 +1957,6 @@ function doReset(){
   if(confirm(t('confirm-reset'))){localStorage.removeItem('ff7');localStorage.removeItem('ff7_pt');location.reload();}}
 
 // ============================================================
-// NEW MATH CLOCK ENGINE (Accurate & Offline)
-// ============================================================
-function addM(tstr, m){
-  if(!tstr) return '--:--';
-  const[h,mn]=tstr.split(':').map(Number);
-  let tm=h*60+mn+m; if(tm<0)tm+=1440; if(tm>=1440)tm-=1440;
-  return String(Math.floor(tm/60)).padStart(2,'0')+':'+String(tm%60).padStart(2,'0');
-}
-function t2m(tstr){ if(!tstr||tstr==='--:--')return-1; const[h,m]=tstr.split(':').map(Number); return h*60+m; }
-
-function to12h(t24){
-  if(!t24||t24==='--:--') return '--:--';
-  let [h,m]=t24.split(':').map(Number);
-  const ampm=h>=12?(L==='ar'?'م':'PM'):(L==='ar'?'ص':'AM');
-  h=h%12||12;
-  return `${h}:${String(m).padStart(2,'0')} ${ampm}`;
-}
-
-const DEG = Math.PI / 180;
-function fixH(h) { return h - 24 * Math.floor(h / 24); }
-
-function calcMathPT(lat, lng) {
-    const date = new Date();
-    const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
-    const gamma = 2 * Math.PI / 365 * (dayOfYear - 1 + (date.getHours() - 12) / 24);
-    const eqtime = 229.18 * (0.000075 + 0.001868 * Math.cos(gamma) - 0.032077 * Math.sin(gamma) - 0.014615 * Math.cos(2 * gamma) - 0.040849 * Math.sin(2 * gamma));
-    const decl = 0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma) - 0.006758 * Math.cos(2 * gamma) + 0.000907 * Math.sin(2 * gamma);
-    
-    const tzOffset = -date.getTimezoneOffset() / 60;
-    const noon = 12 - (lng / 15) + tzOffset - (eqtime / 60);
-
-    const getHA = (angle) => {
-        const v = (-Math.sin(angle * DEG) - Math.sin(lat * DEG) * Math.sin(decl)) / (Math.cos(lat * DEG) * Math.cos(decl));
-        return v < -1 || v > 1 ? null : Math.acos(v) / (15 * DEG);
-    };
-
-    const toTime = (hrs) => {
-        if (!hrs) return "--:--";
-        const h = Math.floor(fixH(hrs));
-        const m = Math.round((fixH(hrs) - h) * 60);
-        return String(h).padStart(2,'0') + ":" + String(m).padStart(2,'0');
-    };
-
-    return { fajr: toTime(noon - getHA(18)), maghrib: toTime(noon + getHA(0.833)), isha: toTime(noon + getHA(17)) };
-}
-
-const CITIES=[
-  {n:'الدار البيضاء',e:'Casablanca',lat:33.5731,lng:-7.5898,tz:1},
-  {n:'الرباط',e:'Rabat',lat:33.9716,lng:-6.8498,tz:1},
-  {n:'فاس',e:'Fes',lat:34.0331,lng:-5.0003,tz:1},
-  {n:'مراكش',e:'Marrakech',lat:31.6295,lng:-7.9811,tz:1},
-  {n:'طنجة',e:'Tangier',lat:35.7595,lng:-5.8340,tz:1},
-  {n:'أكادير',e:'Agadir',lat:30.4278,lng:-9.5981,tz:1},
-  {n:'مكناس',e:'Meknes',lat:33.8935,lng:-5.5473,tz:1},
-  {n:'وجدة',e:'Oujda',lat:34.6814,lng:-1.9086,tz:1},
-  {n:'القنيطرة',e:'Kenitra',lat:34.2610,lng:-6.5802,tz:1},
-  {n:'تطوان',e:'Tetouan',lat:35.5785,lng:-5.3684,tz:1},
-  {n:'سلا',e:'Sale',lat:34.0531,lng:-6.7985,tz:1},
-  {n:'الجديدة',e:'El Jadida',lat:33.2316,lng:-8.5007,tz:1},
-  {n:'بني ملال',e:'Beni Mellal',lat:32.3373,lng:-6.3498,tz:1},
-  {n:'نادور',e:'Nador',lat:35.1740,lng:-2.9287,tz:1},
-  {n:'العيون',e:'Laayoune',lat:27.1536,lng:-13.2033,tz:1}
-];
-
-let _userCity=null;
-
-function getCityCoords(){
-  const saved=localStorage.getItem('ff7_city');
-  if(saved){try{return JSON.parse(saved);}catch(e){}}
-  return null;
-}
-function saveCityCoords(city){
-  localStorage.setItem('ff7_city',JSON.stringify(city));
-  _userCity=city;
-}
-
-function onCityChange(idx){
-  if(idx===''||idx==='gps') {
-    localStorage.removeItem('ff7_city'); _userCity=null; _cachedPT=null;
-    fetchPT().then(()=>{rPrayerCard();rAlarms();}); return;
-  }
-  const city=CITIES[+idx];
-  if(!city) return;
-  saveCityCoords(city); _cachedPT=null;
-  fetchPT().then(()=>{rPrayerCard();rAlarms();});
-  toast((L==='ar'?'📍 تم اختيار ':'📍 City set: ')+(L==='ar'?city.n:city.e));
-}
-
-function renderCityCard(){
-  const ar=L==='ar';
-  document.getElementById('city-lbl').textContent='📍 '+(ar?'مدينتك للصلاة':'Your Prayer City');
-  const saved=getCityCoords();
-  const sel=document.getElementById('city-sel');
-  sel.innerHTML=`<option value="gps">${ar?'📡 تلقائي (GPS)':'📡 Auto (GPS)'}</option>`
-    +CITIES.map((c,i)=>`<option value="${i}">${ar?c.n:c.e}</option>`).join('');
-  if(saved){
-    const idx=CITIES.findIndex(c=>c.n===saved.n);
-    if(idx>=0) sel.value=String(idx);
-  } else { sel.value='gps'; }
-}
-
-async function getCoords(){
-  const city=getCityCoords();
-  if(city) return {lat:city.lat, lng:city.lng, fromCity:true};
-  return new Promise((resolve)=>{
-    if(!navigator.geolocation){resolve(null);return;}
-    navigator.geolocation.getCurrentPosition(
-      pos=>resolve({lat:pos.coords.latitude,lng:pos.coords.longitude}),
-      ()=>resolve(null), {timeout:5000,maximumAge:3600000}
-    );
-  });
-}
-
-async function fetchPT(){
-  const coords=await Promise.race([
-    getCoords(),
-    new Promise(r=>setTimeout(()=>r(null),4000))
-  ]);
-
-  const lat=coords?coords.lat:33.5731;
-  const lng=coords?coords.lng:-7.5898;
-  const fromCity=coords&&coords.fromCity;
-
-  const pt = calcMathPT(lat, lng);
-  
-  let src = fromCity ? 'city' : (coords ? 'gps' : 'calc');
-
-  _cachedPT={
-      fajr: pt.fajr,
-      maghrib: pt.maghrib,
-      isha: pt.isha,
-      suhoor: addM(pt.fajr, -35),
-      workout: addM(pt.maghrib, 90),
-      src: src
-  };
-  try{localStorage.setItem('ff7_pt',JSON.stringify(_cachedPT));}catch(e){}
-  return _cachedPT;
-}
-
-function getPT(){
-  return _cachedPT || {fajr:'05:30', maghrib:'18:30', isha:'19:50', suhoor:'04:55', workout:'20:00', src:'calc'};
-}
-
-function rPrayerCard(){
-  if(!isRamadan){document.getElementById('ptcard').style.display='none';return;}
-  document.getElementById('ptcard').style.display='block';
-  const pt=getPT();
-  const now=new Date();
-  const months_ar=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-  const months_en=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const days_ar=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-  const days_en=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const ds=L==='ar'?days_ar:days_en, ms=L==='ar'?months_ar:months_en;
-  document.getElementById('pt-date').textContent=`${ds[now.getDay()]} ${now.getDate()} ${ms[now.getMonth()]} ${now.getFullYear()}`;
-  document.getElementById('pt-tag').textContent=t('pt-tag');
-  
-  const items=[
-    {k:'maghrib',lbl:t('pt-maghrib'),tm:pt.maghrib,ic:'🌅'},
-    {k:'isha',lbl:t('pt-isha'),tm:pt.isha,ic:'🌙'},
-    {k:'suhoor',lbl:t('pt-suhoor'),tm:pt.suhoor,ic:'⭐'}
-  ];
-  
-  const nowMin=now.getHours()*60+now.getMinutes();
-  const nowSec=now.getSeconds();
-  
-  let nextIdx=-1;
-  let minDiff = Infinity;
-  
-  items.forEach((x,i)=>{ 
-      let diff = t2m(x.tm) - nowMin;
-      if (diff < 0) diff += 1440; // Next day
-      if (diff < minDiff) { minDiff = diff; nextIdx = i; }
-  });
-  
-  document.getElementById('ptrow').innerHTML=items.map((x,i)=>`
-    <div class="ptime${i===nextIdx?' nx':''}">
-      <div style="font-size:12px">${x.ic}</div>
-      <div class="ptime-v">${to12h(x.tm)}</div>
-      <div class="ptime-l">${x.lbl}</div>
-    </div>`).join('');
-    
-  if(nextIdx>=0){
-    const nx = items[nextIdx];
-    let diffMin = t2m(nx.tm) - nowMin;
-    if (diffMin < 0) diffMin += 1440;
-    
-    let remSec = 60 - nowSec;
-    if (remSec === 60) remSec = 0; else diffMin -= 1;
-    if (diffMin < 0) diffMin = 0;
-
-    const dh = Math.floor(diffMin/60), dm = diffMin%60;
-    document.getElementById('pt-badge').textContent=dh>0?`${dh}h ${dm}m`:`${dm}m`;
-    
-    const secLabel = L==='ar' ? 'ث' : 's';
-    document.getElementById('ptcnt').textContent=t('countdown-to')+ ' ' + nx.lbl+': '+(dh>0?dh+t('h-label'):'')+dm+t('m-label') + ` ${remSec}${secLabel}`;
-  }
-  const srcMap={live:t('ptsrc-live'),cache:t('ptsrc-cache'),fallback:t('ptsrc-fallback'),calc:t('ptsrc-calc'),gps:t('ptsrc-gps'),city:t('ptsrc-city'),default:t('ptsrc-default')};
-  document.getElementById('ptsrc').textContent=srcMap[pt.src||'calc']||'';
-}
-
-function startPTLoop(){
-  if(window._CTD2)clearInterval(window._CTD2);
-  fetchPT().then(()=>rPrayerCard());
-  // Update exact seconds live
-  window._CTD2=setInterval(()=>{ rPrayerCard(); },1000);
-}
-
-// ============================================================
 // INIT
 // ============================================================
 function startApp(){
@@ -2021,29 +1971,20 @@ function startApp(){
     CS=1; showStep(1);
   }
 }
-window.onload=()=>{
+// Register Service Worker for PWA auto-updates
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg=>{ reg.update(); })
+      .catch(err=>console.warn('SW failed:',err));
+  });
+}
+
   const saved=localStorage.getItem('ff7');
   if(saved){try{const d=JSON.parse(saved);L=d.L||'ar';}catch(e){}}
   applyLang();
   document.getElementById('pg-splash').classList.add('on');
   setInterval(()=>{if(document.getElementById('pg-main').classList.contains('on'))save();},30000);
 };
-
-// AUTO UPDATE SCRIPT
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js?v=9').then(reg => {
-      reg.onupdatefound = () => {
-        const installingWorker = reg.installing;
-        installingWorker.onstatechange = () => {
-          if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            window.location.reload();
-          }
-        };
-      };
-    });
-  });
-}
 </script>
-</body>
 </html>
