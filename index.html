@@ -153,9 +153,7 @@ input,select,button{font-family:inherit;font-size:inherit}
 <script>
 // ============================================================
 // CLOCK ENGINE (MOROCCO / GLOBAL)
-// 100% Offline calculation based on astronomical math
 // ============================================================
-
 const DEG = Math.PI / 180;
 function fixH(h) { return h - 24 * Math.floor(h / 24); }
 function fixA(a) { return a - 360 * Math.floor(a / 360); }
@@ -163,14 +161,9 @@ function fixA(a) { return a - 360 * Math.floor(a / 360); }
 function getPrayerTimes(lat, lng) {
     const date = new Date();
     const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
-    
-    // Simple but highly accurate solar calculation for Morocco/MENA
-    // This removes the need for adhan.js which often fails on mobile browsers
     const gamma = 2 * Math.PI / 365 * (dayOfYear - 1 + (date.getHours() - 12) / 24);
     const eqtime = 229.18 * (0.000075 + 0.001868 * Math.cos(gamma) - 0.032077 * Math.sin(gamma) - 0.014615 * Math.cos(2 * gamma) - 0.040849 * Math.sin(2 * gamma));
     const decl = 0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma) - 0.006758 * Math.cos(2 * gamma) + 0.000907 * Math.sin(2 * gamma);
-
-    // Timezone check: Morocco usually GMT during Ramadan
     const tzOffset = -date.getTimezoneOffset() / 60;
     const noon = 12 - (lng / 15) + tzOffset - (eqtime / 60);
 
@@ -180,9 +173,9 @@ function getPrayerTimes(lat, lng) {
         return Math.acos(v) / (15 * DEG);
     }
 
-    const fajrHA = getHourAngle(18); // standard 18 degrees
-    const maghribHA = getHourAngle(0.833); // sunset
-    const ishaHA = getHourAngle(17); // standard 17 degrees
+    const fajrHA = getHourAngle(18);
+    const maghribHA = getHourAngle(0.833);
+    const ishaHA = getHourAngle(17);
 
     function toTime(hours) {
         if (!hours) return "00:00";
@@ -198,14 +191,8 @@ function getPrayerTimes(lat, lng) {
     };
 }
 
-// ============================================================
-// UI UPDATER
-// ============================================================
-
 function updateClock() {
-    // Casablanca Coords
     const pt = getPrayerTimes(33.57, -7.58);
-    
     document.getElementById('pt-fajr').textContent = pt.fajr;
     document.getElementById('pt-maghrib').textContent = pt.maghrib;
     document.getElementById('pt-isha').textContent = pt.isha;
@@ -243,7 +230,6 @@ function updateClock() {
         const h = Math.floor(diff / 3600);
         const m = Math.floor((diff % 3600) / 60);
         const s = diff % 60;
-        
         badgeEl.textContent = `${h}h ${m}m`;
         countdownEl.textContent = `يتبقى لـ ${next.name}: ${h}س ${m}د ${s}ث`;
     } else {
@@ -256,7 +242,25 @@ function startApp() {
     document.getElementById('pg-splash').classList.remove('on');
     document.getElementById('pg-main').classList.add('on');
     updateClock();
-    setInterval(updateClock, 1000); // Live update every second
+    setInterval(updateClock, 1000);
+}
+
+// AUTO UPDATE SCRIPT
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js?v=3').then(reg => {
+      reg.onupdatefound = () => {
+        const installingWorker = reg.installing;
+        installingWorker.onstatechange = () => {
+          if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            // New content available, restart the app automatically
+            window.location.reload();
+          }
+        };
+      };
+    });
+  });
 }
 </script>
+</body>
 </html>
